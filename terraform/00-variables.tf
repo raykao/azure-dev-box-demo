@@ -24,7 +24,8 @@ variable "custom_images" {
     jetbrains = {
       publisher_name = "devgbb"
       offer_name = "jetbrainsbox"
-      semver = "1-0-0"
+      sku = "demo"
+      semver = "1.0.0"
     }
   }
 }

@@ -20,7 +20,7 @@ resource "azurerm_shared_image" "image_definitions" {
   identifier {
     publisher = each.value.publisher_name
     offer     = each.value.offer_name
-    sku       = each.value.semver
+    sku       = each.value.sku
   }
 }
 
@@ -56,7 +56,7 @@ resource "terraform_data" "packer" {
 data "azurerm_shared_image_version" "custom_images" {
   depends_on = [ terraform_data.packer ]
   for_each = var.custom_images
-  image_name                = each.value.image_name
+  image_name = each.value.image_name
   name = each.value.semver
   gallery_name = azurerm_shared_image_gallery.default.name
   resource_group_name = azurerm_resource_group.default.name
