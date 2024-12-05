@@ -28,6 +28,6 @@ resource "azurerm_shared_image" "image_definitions" {
   identifier {
     publisher = "returngis"
     offer     = "${each.value}box"
-    sku       = "demo"
+    sku       = "1-0-0"
   }
 }
